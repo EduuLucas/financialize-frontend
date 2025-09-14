@@ -10,23 +10,23 @@ function redirect(location: string) {
 export const handle = async ({ event, resolve }) => {
     const session = event.cookies.get("session");
 
-    if (!session) {
-        if (event.url.pathname != "/register" && event.url.pathname != "/login") {
-            return redirect("/login");
-        }
+    // if (!session) {
+    //     if (event.url.pathname != "/register" && event.url.pathname != "/login") {
+    //         return redirect("/login");
+    //     }
 
-        return await resolve(event);
-    }
+    //     return await resolve(event);
+    // }
 
-    const user = await axios
-        .get(`http://localhost:3000/users?user_token=${session}`)
-        .then((response) => {
-            return response.data.data.user;
-        });
+    // const user = await axios
+    //     .get(`http://localhost:3000/users?user_token=${session}`)
+    //     .then((response) => {
+    //         return response.data.data.user;
+    //     });
 
-    if (user) {
-        event.locals.user = user;
-    }
+    // if (user) {
+    //     event.locals.user = user;
+    // }
 
     return await resolve(event);
 };

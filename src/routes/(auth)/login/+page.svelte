@@ -1,56 +1,18 @@
 <script>
-  import Button from "../../../components/button/Button.svelte";
-  import Input from "../../../components/input/Input.svelte";
+    import { Logo } from "$lib";
+    import Button from "../../../components/button/Button.svelte";
+    import Input from "../../../components/input/Input.svelte";
+    import Login from "./(components)/login.svelte";
 </script>
 
-<div class="div-root">
-  <div class="div-form">
-    <form action="?/login" method="POST">
-      <h1>Login</h1>
-      <div>
-        <Input name="cpf" type="text" required placeholder="CPF" />
-      </div>
-
-      <div>
-        <Input name="password" type="password" required placeholder="Senha" />
-      </div>
-      <Button type="submit">Entrar</Button>
-      <div class="div-register">
-        ainda sem conta? <a href="/register">registre-se</a>
-      </div>
-    </form>
-  </div>
+<div class="w-full h-full flex flex-row">
+    <div class="bg-black p-10 flex-1 text-white flex flex-col justify-between items-center">
+        <div class="w-full h-full flex flex-1 justify-center items-center ">
+            <img src={Logo} alt="logo" class="w-fit h-fit"/>
+        </div>
+        <Login/>
+    </div>
+    <div class="bg-white p-4 hidden md:flex md:flex-2">
+        
+    </div>
 </div>
-
-<style>
-  h1 {
-    text-align: center;
-    margin-top: 0px;
-  }
-  .div-root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #0b0b0b;
-    width: 100%;
-    height: 100%;
-  }
-
-  .div-form {
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: white;
-  }
-
-  .div-register {
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  a {
-    text-decoration: none;
-    color: blue;
-  }
-</style>

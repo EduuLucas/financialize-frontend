@@ -1,5 +1,5 @@
-import { fail, redirect } from "@sveltejs/kit";
-import type { Action, Actions, PageServerLoad } from "./$types";
+import { redirect } from "@sveltejs/kit";
+import type { Action, Actions } from "./$types";
 import axios from "axios";
 
 const login: Action = async ({ cookies, request }) => {
