@@ -1,9 +1,9 @@
-<script>
-  export let linkTo;
+<script lang="ts">
+  let { linkTo, children } = $props();
 </script>
 
 <a class="box" href={linkTo}>
-  <slot></slot>
+  {@render children?.()}
 </a>
 
 <style>

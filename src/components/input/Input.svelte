@@ -1,8 +1,10 @@
-<script>
-  export let name;
-  export let type;
-  export let required;
-  export let placeholder;
+<script lang="ts">
+  let {
+    name,
+    type,
+    required,
+    placeholder
+  } = $props();
 </script>
 
 <input class="input" {name} {required} {placeholder} {type} />
