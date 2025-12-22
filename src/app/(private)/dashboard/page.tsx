@@ -1,15 +1,6 @@
 "use client";
 
 import Card from "./_components/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import { useCard } from "./_components/card/useCard";
@@ -58,44 +49,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Financial Entries Table */}
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Date</TableHead>
-            <TableHead>Description</TableHead>
-            <TableHead>Category</TableHead>
-            <TableHead>Type</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {entries.map((entry) => (
-            <TableRow key={entry.id}>
-              <TableCell className="font-medium">
-                {new Date(entry.date).toLocaleDateString()}
-              </TableCell>
-              <TableCell>{entry.description}</TableCell>
-              <TableCell>{entry.category}</TableCell>
-              <TableCell>
-                <Badge
-                  variant={entry.type === "income" ? "default" : "destructive"}
-                  className={entry.type === "income" ? "bg-green-600" : ""}
-                >
-                  {entry.type === "income" ? "Income" : "Expense"}
-                </Badge>
-              </TableCell>
-              <TableCell
-                className={`text-right font-medium ${
-                  entry.type === "income" ? "text-green-600" : "text-red-600"
-                }`}
-              >
-                {entry.type === "income" ? "+" : "-"}$
-                {entry.amount.toLocaleString()}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      
     </div>
   );
 }
